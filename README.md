@@ -42,6 +42,16 @@ Thanks to https://diy.2pmc.net/solved-xiaomi-xiao-yi-ant-home-camera-can-used-ch
 
 The firmware comes from http://yi-version.qiniudn.com/@/familymonitor-h21/2.1.1_20160429113900home
 
+
+Warning about Dirty Mode
+=======================================================
+
+The dirty mode has been made for testing, it activate both rtsp server and original xiaomi script. It's very unstable. 
+
+It cause camera crashing when a switching in night mode or a move is detected (sometimes...). A script is launched to control the camera crashing and reboot it !
+
+
+
 Installation on the Yi camera
 =============================
 
@@ -157,6 +167,7 @@ test/                          Yi hack folder
       led.sh                   This script lets manipulate the led state
       startup_modified.sh      This script is called from factory_test.sh when MODIFIED startup (aka RTSP server) is activated
       startup_official.sh      This script is called from factory_test.sh when OFFICIAL startup is activated
+      startup_hybrid.sh        This script is called from factory_test.sh when DIRTY startup is activated
   wpa_supplicant.conf          This config file must be correctly filled to connect the camera to your wifi network when RTSP feature is enabled
   yi-hack-v2.cfg               This config file lets you tune up various behaviors
 ````

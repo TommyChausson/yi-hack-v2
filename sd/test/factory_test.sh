@@ -58,7 +58,15 @@ if [ "$YI_HACK_STARTUP_MODE" = "MODIFIED" ]; then
       /sdcard/test/v2/scripts/startup_modified.sh
    fi
 else
-   if [ -f /sdcard/test/v2/scripts/startup_official.sh ]; then
-      /sdcard/test/v2/scripts/startup_official.sh
-   fi
+    if [ "$YI_HACK_STARTUP_MODE" = "DIRTY" ]; then
+        if [ -f /sdcard/test/v2/scripts/startup_hybrid.sh ]; then
+           /sdcard/test/v2/scripts/startup_hybrid.sh
+           /sdcard/test/v2/scripts/control_ipc.sh &
+        fi
+    else
+        if [ -f /sdcard/test/v2/scripts/startup_official.sh ]; then
+           /sdcard/test/v2/scripts/startup_official.sh
+        fi
+    fi
 fi
+
